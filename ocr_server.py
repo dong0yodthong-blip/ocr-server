@@ -7,10 +7,12 @@ app = Flask(__name__)
 def home():
     return "OCR Server is running!"
 
-# 👇 เพิ่มอันนี้เข้าไป
 @app.route("/ocr", methods=["POST"])
 def ocr():
-    return "1234TEST"
+    # ตอนนี้จำลองผล OCR ก่อน
+    if not request.data:
+        return "NO_IMAGE", 400
+    return "1กข1234"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
