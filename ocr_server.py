@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, request
+import os
 
 app = Flask(__name__)
 
@@ -6,7 +7,10 @@ app = Flask(__name__)
 def home():
     return "OCR Server is running!"
 
-import os
+# 👇 อันนี้สำคัญ (รับภาพจาก ESP32)
+@app.route("/ocr", methods=["POST"])
+def ocr():
+    return "1กข1234"  # ตอนนี้ให้ลองส่งเลขปลอมก่อน
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
