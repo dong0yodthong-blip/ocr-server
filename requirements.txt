@@ -1,5 +1,2 @@
 flask
 gunicorn
-numpy
-opencv-python-headless
-easyocr
